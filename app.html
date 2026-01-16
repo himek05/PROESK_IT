@@ -266,23 +266,16 @@
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     
-    console.log('Hamburger element:', hamburger);
-    console.log('NavLinks element:', navLinks);
-    
     if (hamburger && navLinks) {
       hamburger.addEventListener('click', (e) => {
-        console.log('Hamburger clicked');
         e.preventDefault();
         e.stopPropagation();
-        const hasShow = navLinks.classList.toggle('show');
-        console.log('Show class toggled, now has show:', hasShow);
-        console.log('Nav links classes:', navLinks.className);
+        navLinks.classList.toggle('show');
       });
       
       // Close mobile menu when a link is clicked
       document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
-          console.log('Nav link clicked, closing menu');
           navLinks.classList.remove('show');
         });
       });
@@ -293,8 +286,6 @@
           navLinks.classList.remove('show');
         }
       });
-    } else {
-      console.error('Failed to find hamburger or navLinks elements');
     }
   </script>
 </body>
